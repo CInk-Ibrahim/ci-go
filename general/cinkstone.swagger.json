@@ -1,0 +1,60 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "general/cinkstone.proto",
+    "version": "version not set"
+  },
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/version": {
+      "get": {
+        "summary": "/ Get current version information",
+        "operationId": "GetVersion",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/cinkstoneGetVersionResponse"
+            }
+          }
+        },
+        "tags": [
+          "AppService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "cinkstoneGetVersionResponse": {
+      "type": "object",
+      "properties": {
+        "commit": {
+          "type": "string"
+        },
+        "revision": {
+          "type": "string"
+        },
+        "branch": {
+          "type": "string"
+        },
+        "tag": {
+          "type": "string"
+        },
+        "build_date": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "title": "Version information"
+    }
+  }
+}
